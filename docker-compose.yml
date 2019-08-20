@@ -1,9 +1,0 @@
-version: "3"
-
-services:
-        bindserver:
-                build:
-                        context: bindserver
-                        dockerfile: Dockerfile
-                ports:
-                        
