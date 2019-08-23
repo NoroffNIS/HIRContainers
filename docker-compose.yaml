@@ -5,25 +5,27 @@ services:
                 build:
                         context: BindServer
                         dockerfile: Dockerfile
-                ports:
-                        - 53:53
+                expose:
+                        - 53
                 volumes:
                         - ./BindServer/config:/etc/bind 
                 links:
                         - "webgoat:webgoat"
-                        - "apache:apache"
-                        - "debian:debian"
+                        - "web:web"
                         - "curler:curler"
                 networks:
                         - HIR
-
-        apache:
+                stdin_open: true
+                tty: true
+        web:
                 build:
                         context: Apache
                         dockerfile: Dockerfile
-                ports:
-                        - 80:80
-                        - 443:443
+                
+                working_dir: /var/www/html
+                expose:
+                        - 80
+                        - 443
                 volumes:
                         - ./Apache/config:/etc/apache2 
                 links:
@@ -31,36 +33,30 @@ services:
                         - "badstore:badstore"
                 networks:
                         - HIR
+                stdin_open: true
+                tty: true
+ 
 
-        debian:
-                build:
-                        context: Debian
-                        dockerfile: Dockerfile
-                links:
-                        - "apache:apache"
-                networks:
-                        - HIR
 
         curler:
-                image: debian/latest
+                image: debian:latest
                 links:
-                        - "apache:apache"
+                        - "web:web"
                 volumes:
-                        - ./Curler/config:~/
+                        - ./Curler/config:/root/
                 networks:
                         - HIR
 
         webgoat:
                 image: webgoat/webgoat-8.0
-                networks:
-                        - HIR
 
         badstore:
                 image: jvhoof/badstore-docker
-                networks:
-                        - HIR
 
 networks:
         HIR:
-                driver: bridge
-                
+            driver: bridge
+            ipam:
+                 driver: default
+                 config:
+                     - subnet: "10.8.10.0/24"

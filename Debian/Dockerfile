@@ -1,4 +1,4 @@
-FROM debian/latest
+FROM debian:latest
 RUN apt-get update && apt-get install -y openssh-server nmap dig
 RUN mkdir /var/run/sshd
 RUN echo 'root:Noroff123' | chpasswd
