@@ -53,6 +53,9 @@ services:
         badstore:
                 image: jvhoof/badstore-docker
 
+        wordpress:
+
+
 networks:
         HIR:
             driver: bridge
