@@ -28,6 +28,7 @@ services:
                 volumes:
                         - ./Apache/config:/etc/apache2
                         - ./Apache/pages:/var/www/
+                        - ./Apache/certs:/etc/certs/
                 links:
                         - "webgoat:webgoat"
                         - "badstore:badstore"
