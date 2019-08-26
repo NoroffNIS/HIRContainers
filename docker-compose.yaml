@@ -5,8 +5,6 @@ services:
                 build:
                         context: BindServer
                         dockerfile: Dockerfile
-                expose:
-                        - 53
                 volumes:
                         - ./BindServer/config:/etc/bind 
                 links:
@@ -14,7 +12,10 @@ services:
                         - "web:web"
                         - "curler:curler"
                 networks:
-                        - HIR
+                        HIR:
+                            ipv4_address: "10.8.10.2"
+                dns: "10.8.10.2"
+                expose: ["53"]
                 stdin_open: true
                 tty: true
         web:
@@ -23,16 +24,18 @@ services:
                         dockerfile: Dockerfile
                 
                 working_dir: /var/www/html
-                expose:
-                        - 80
-                        - 443
                 volumes:
-                        - ./Apache/config:/etc/apache2 
+                        - ./Apache/config:/etc/apache2
+                        - ./Apache/pages:/var/www/
                 links:
                         - "webgoat:webgoat"
                         - "badstore:badstore"
                 networks:
-                        - HIR
+                        HIR:
+                            ipv4_address: "10.8.10.3"
+                expose: ["80","443"]
+                dns: "10.8.10.2"
+                cmd: ["apache2ctl","start"]
                 stdin_open: true
                 tty: true
  
@@ -46,6 +49,7 @@ services:
                         - ./Curler/config:/root/
                 networks:
                         - HIR
+                dns: "10.8.10.2"
 
         webgoat:
                 image: webgoat/webgoat-8.0
@@ -57,6 +61,5 @@ networks:
         HIR:
             driver: bridge
             ipam:
-                 driver: default
                  config:
                      - subnet: "10.8.10.0/24"
