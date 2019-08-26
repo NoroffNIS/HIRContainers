@@ -13,9 +13,10 @@ services:
                         - "curler:curler"
                 networks:
                         HIR:
-                            ipv4_address: "10.8.10.2"
-                dns: "10.8.10.2"
+                            ipv4_address: "10.8.10.5"
+                dns: "10.8.10.5"
                 expose: ["53"]
+                command: ["named", "-c", "/etc/bind/named.conf", "-g", "-u","root"]
                 stdin_open: true
                 tty: true
         web:
@@ -34,8 +35,8 @@ services:
                         HIR:
                             ipv4_address: "10.8.10.3"
                 expose: ["80","443"]
-                dns: "10.8.10.2"
-                cmd: ["apache2ctl","start"]
+                dns: "10.8.10.5"
+                command: ["apache2ctl", "-D", "FOREGROUND"]
                 stdin_open: true
                 tty: true
  
@@ -49,7 +50,7 @@ services:
                         - ./Curler/config:/root/
                 networks:
                         - HIR
-                dns: "10.8.10.2"
+                dns: "10.8.10.5"
 
         webgoat:
                 image: webgoat/webgoat-8.0
