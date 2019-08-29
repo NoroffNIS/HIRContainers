@@ -58,7 +58,12 @@ services:
 
         badstore:
                 image: jvhoof/badstore-docker
-
+        nessus:
+                image: sometheycallme/docker-nessus
+                networks:
+                        HIR:
+                                ipv4_address: "10.10.8.6"
+                        dns: "10.8.10.5"
 networks:
         HIR:
             driver: bridge
