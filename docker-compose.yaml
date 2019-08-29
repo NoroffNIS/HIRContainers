@@ -62,7 +62,7 @@ services:
                 image: sometheycallme/docker-nessus
                 networks:
                         HIR:
-                            ipv4_address: "10.10.8.6"
+                            ipv4_address: "10.8.10.6"
                 dns: "10.8.10.5"
         
         wordpress:
