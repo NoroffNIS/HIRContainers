@@ -60,6 +60,7 @@ services:
                 image: jvhoof/badstore-docker
         nessus:
                 image: sometheycallme/docker-nessus
+                expose: [8834]
                 networks:
                         HIR:
                             ipv4_address: "10.8.10.6"
