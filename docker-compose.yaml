@@ -62,8 +62,25 @@ services:
                 image: sometheycallme/docker-nessus
                 networks:
                         HIR:
-                                ipv4_address: "10.10.8.6"
-                        dns: "10.8.10.5"
+                            ipv4_address: "10.10.8.6"
+                dns: "10.8.10.5"
+        
+        wordpress:
+                image: wordpress
+                restart: always
+                expose: [80, 443]
+                environment:
+                        WORDPRESS_DB_HOST: db
+                        WORDPRESS_DB_NAME: wordpress
+
+        db:
+                image: mysql:5.7
+                restart: always
+                environment:
+                        MYSQL_DATABASE: wordpress
+                        MYSQL_USER: user
+                        MYSQL_PASSWORD: user
+                        MYSQL_RANDOM_ROOT_PASSWORD: '1'
 networks:
         HIR:
             driver: bridge
