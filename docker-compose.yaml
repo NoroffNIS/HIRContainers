@@ -5,8 +5,6 @@ services:
                 build:
                         context: BindServer
                         dockerfile: Dockerfile
-                expose:
-                        - 53
                 volumes:
                         - ./BindServer/config:/etc/bind 
                 links:
@@ -14,7 +12,11 @@ services:
                         - "web:web"
                         - "curler:curler"
                 networks:
-                        - HIR
+                        HIR:
+                            ipv4_address: "10.8.10.5"
+                dns: "10.8.10.5"
+                expose: ["53"]
+                command: ["named", "-c", "/etc/bind/named.conf", "-g", "-u","root"]
                 stdin_open: true
                 tty: true
         web:
@@ -23,16 +25,19 @@ services:
                         dockerfile: Dockerfile
                 
                 working_dir: /var/www/html
-                expose:
-                        - 80
-                        - 443
                 volumes:
-                        - ./Apache/config:/etc/apache2 
+                        - ./Apache/config:/etc/apache2
+                        - ./Apache/pages:/var/www/
+                        - ./Apache/certs:/etc/certs/
                 links:
                         - "webgoat:webgoat"
                         - "badstore:badstore"
                 networks:
-                        - HIR
+                        HIR:
+                            ipv4_address: "10.8.10.3"
+                expose: ["80","443"]
+                dns: "10.8.10.5"
+                command: ["apache2ctl", "-D", "FOREGROUND"]
                 stdin_open: true
                 tty: true
  
@@ -46,20 +51,46 @@ services:
                         - ./Curler/config:/root/
                 networks:
                         - HIR
+                dns: "10.8.10.5"
 
         webgoat:
                 image: webgoat/webgoat-8.0
 
         badstore:
                 image: jvhoof/badstore-docker
+        nessus:
+                image: sometheycallme/docker-nessus
+                expose: [8834]
+                networks:
+                        HIR:
+                            ipv4_address: "10.8.10.6"
+                dns: "10.8.10.5"
+        
+        wordpress:
+                image: wordpress
+                restart: always
+                expose: [80, 443]
+                environment:
+                        WORDPRESS_DB_HOST: db
+                        WORDPRESS_DB_NAME: wordpress
 
+<<<<<<< HEAD
         wordpress:
 
 
+=======
+        db:
+                image: mysql:5.7
+                restart: always
+                environment:
+                        MYSQL_DATABASE: wordpress
+                        MYSQL_USER: user
+                        MYSQL_PASSWORD: user
+                        MYSQL_RANDOM_ROOT_PASSWORD: '1'
+>>>>>>> e35aaf57fe5f17e83c3e7b15e62eecd3b1c804f9
 networks:
         HIR:
             driver: bridge
             ipam:
-                 driver: default
                  config:
                      - subnet: "10.8.10.0/24"
