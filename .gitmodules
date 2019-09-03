@@ -1,0 +1,3 @@
+[submodule "openvas-docker"]
+	path = openvas-docker
+	url = https://github.com/Atomicorp/openvas-docker.git

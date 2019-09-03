@@ -74,11 +74,6 @@ services:
                         WORDPRESS_DB_HOST: db
                         WORDPRESS_DB_NAME: wordpress
 
-<<<<<<< HEAD
-        wordpress:
-
-
-=======
         db:
                 image: mysql:5.7
                 restart: always
@@ -87,7 +82,6 @@ services:
                         MYSQL_USER: user
                         MYSQL_PASSWORD: user
                         MYSQL_RANDOM_ROOT_PASSWORD: '1'
->>>>>>> e35aaf57fe5f17e83c3e7b15e62eecd3b1c804f9
 networks:
         HIR:
             driver: bridge
