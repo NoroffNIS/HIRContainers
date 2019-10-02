@@ -34,7 +34,7 @@ services:
                         - "badstore:badstore"
                 networks:
                         HIR:
-                            ipv4_address: "10.8.10.12"
+                            ipv4_address: "10.8.10.3"
                 expose: ["80","443"]
                 dns: "10.8.10.5"
                 command: ["apache2ctl", "-D", "FOREGROUND"]
@@ -57,27 +57,50 @@ services:
                 image: webgoat/webgoat-8.0
                 networks:
                         - HIR
-
+                networks:
+                        HIR:
+                            ipv4_address: "10.8.10.21"
+ 
         badstore:
                 image: jvhoof/badstore-docker
                 networks:
                         - HIR
+                networks:
+                        HIR:
+                            ipv4_address: "10.8.10.22"
+ 
         dwa:
                 image: vulnerables/web-dvwa
                 networks: 
                         - HIR
+                networks:
+                        HIR:
+                            ipv4_address: "10.8.10.23"
+ 
         mutillidae:
                 image: szsecurity/mutillidae
                 networks:
                         - HIR
+                networks:
+                        HIR:
+                            ipv4_address: "10.8.10.24"
+ 
         bwap:
                 image: raesene/bwapp
                 networks:
                         - HIR
+                networks:
+                        HIR:
+                            ipv4_address: "10.8.10.25"
+ 
         jucieshop:
                 image: bkimminich/juice-shop
                 networks:
                         - HIR
+                networks:
+                        HIR:
+                           ipv4_address: "10.8.10.26"
+ 
         nessus:
                 image: sometheycallme/docker-nessus
                 expose: [8834]
