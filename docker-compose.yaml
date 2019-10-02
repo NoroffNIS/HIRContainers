@@ -55,9 +55,29 @@ services:
 
         webgoat:
                 image: webgoat/webgoat-8.0
+                networks:
+                        - HIR
 
         badstore:
                 image: jvhoof/badstore-docker
+                networks:
+                        - HIR
+        dwa:
+                image: vulnerables/web-dvwa
+                networks: 
+                        - HIR
+        mutillidae:
+                image: szsecurity/mutillidae
+                networks:
+                        - HIR
+        bwap:
+                image: raesene/bwapp
+                networks:
+                        - HIR
+        jucieshop:
+                image: bkimminich/juice-shop
+                networks:
+                        - HIR
         nessus:
                 image: sometheycallme/docker-nessus
                 expose: [8834]
