@@ -42,7 +42,7 @@ services:
                 tty: true
  
         snort:
-                image: dnf/docker-snort
+                image: linton/docker-snort
                 environment:
                         - HOME_NET=10.8.10.0
                         - INTERFACE=eth0
