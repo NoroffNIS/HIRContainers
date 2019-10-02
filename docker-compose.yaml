@@ -41,8 +41,17 @@ services:
                 stdin_open: true
                 tty: true
  
-
-
+        snort:
+                image: dnf/docker-snort
+                enviroment:
+                        - HOME_NET=10.8.10.0
+                        - INTERFACE=eth0
+                        - AD=10.8.10.7
+ 
+                networks:
+                        HIR:
+                            ipv4_address: "10.8.10.7"
+ 
         curler:
                 image: debian:latest
                 links:
