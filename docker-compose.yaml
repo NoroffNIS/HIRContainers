@@ -34,7 +34,7 @@ services:
                         - "badstore:badstore"
                 networks:
                         HIR:
-                            ipv4_address: "10.8.10.3"
+                            ipv4_address: "10.8.10.12"
                 expose: ["80","443"]
                 dns: "10.8.10.5"
                 command: ["apache2ctl", "-D", "FOREGROUND"]
@@ -83,7 +83,7 @@ services:
                 expose: [8834]
                 networks:
                         HIR:
-                            ipv4_address: "10.8.10.6"
+                            ipv4_address: "10.8.10.10"
                 dns: "10.8.10.5"
         
         wordpress:
