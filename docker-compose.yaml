@@ -43,7 +43,7 @@ services:
  
         snort:
                 image: dnf/docker-snort
-                enviroment:
+                environment:
                         - HOME_NET=10.8.10.0
                         - INTERFACE=eth0
                         - AD=10.8.10.7
