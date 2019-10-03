@@ -63,9 +63,10 @@ services:
                 dns: "10.8.10.5"
 
         webgoat:
-                image: webgoat/webgoat-8.0
+                image: szsecurity/webgoat
                 networks:
                         - HIR
+                expose: ["80"] 
                 networks:
                         HIR:
                             ipv4_address: "10.8.10.21"
@@ -122,13 +123,18 @@ services:
                 image: wordpress
                 restart: always
                 expose: [80, 443]
+                depends_on: 
+                        - db
                 environment:
-                        WORDPRESS_DB_HOST: db
+                        WORDPRESS_DB_HOST: db:3306
+                        WORDPRESS_DB_USER: user
+                        WORDPRESS_DB_PASSWORD: user
                         WORDPRESS_DB_NAME: wordpress
                 networks:
                         HIR:
                             ipv4_address: "10.8.10.27"
- 
+                links:
+                        - "db:db"
 
         db:
                 image: mysql:5.7
