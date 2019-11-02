@@ -40,17 +40,7 @@ services:
                 command: ["apache2ctl", "-D", "FOREGROUND"]
                 stdin_open: true
                 tty: true
- 
-        snort:
-                image: linton/docker-snort
-                environment:
-                        - HOME_NET=10.8.10.0
-                        - INTERFACE=eth0
-                        - AD=10.8.10.7
- 
-                networks:
-                        HIR:
-                            ipv4_address: "10.8.10.7"
+
  
         curler:
                 image: debian:latest
@@ -64,8 +54,6 @@ services:
 
         webgoat:
                 image: szsecurity/webgoat
-                networks:
-                        - HIR
                 expose: ["80"] 
                 networks:
                         HIR:
@@ -74,15 +62,11 @@ services:
         badstore:
                 image: jvhoof/badstore-docker
                 networks:
-                        - HIR
-                networks:
                         HIR:
                             ipv4_address: "10.8.10.22"
  
         dwa:
                 image: vulnerables/web-dvwa
-                networks: 
-                        - HIR
                 networks:
                         HIR:
                             ipv4_address: "10.8.10.23"
@@ -147,10 +131,33 @@ services:
                 networks:
                         HIR:
                             ipv4_address: "10.8.10.9"
- 
+
+        nhm:
+                build:
+                        context: mhn
+                        docerfile: Dockerfile
+                name: "mhn"
+                environment:
+                        SUPERUSER_EMAIL: root@localhost
+                        SUPERUSER_PASSWORD: password
+                        SERVER_BASE_URL: "http://mhn"
+                        HONEYMAP_URL: "http://mhn:3000"
+                networks:
+                        NHM:
+                                ipv4_address: "10.9.10.2"
+                        HIR:
+                                ipv4_address: "10.9.10.50"
+
+
+
 networks:
         HIR:
             driver: bridge
             ipam:
                  config:
                      - subnet: "10.8.10.0/24"
+        NHM:
+           driver: bridge
+           ipam:
+                   config:
+                           -subnet: "10.9.10.0/24"

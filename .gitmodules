@@ -1,3 +1,6 @@
 [submodule "openvas-docker"]
 	path = openvas-docker
 	url = https://github.com/Atomicorp/openvas-docker.git
+[submodule "mhn"]
+	path = mhn
+	url = https://github.com/pwnlandia/mhn.git
