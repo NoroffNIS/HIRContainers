@@ -74,15 +74,11 @@ services:
         mutillidae:
                 image: szsecurity/mutillidae
                 networks:
-                        - HIR
-                networks:
                         HIR:
                             ipv4_address: "10.8.10.24"
  
         bwap:
                 image: raesene/bwapp
-                networks:
-                        - HIR
                 networks:
                         HIR:
                             ipv4_address: "10.8.10.25"
