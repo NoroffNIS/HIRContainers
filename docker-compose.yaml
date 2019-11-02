@@ -135,7 +135,7 @@ services:
         nhm:
                 build:
                         context: mhn
-                        docerfile: Dockerfile
+                        dockerfile: Dockerfile
                 name: "mhn"
                 environment:
                         SUPERUSER_EMAIL: root@localhost
