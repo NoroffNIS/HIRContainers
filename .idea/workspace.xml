@@ -9,7 +9,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="521cba2c-438b-4627-a6cf-3536ba1a1f12" name="Default Changelist" comment="" />
+    <list default="true" id="521cba2c-438b-4627-a6cf-3536ba1a1f12" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +52,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572689472656</updated>
-      <workItem from="1572689473769" duration="4319000" />
+      <workItem from="1572689473769" duration="5000000" />
     </task>
     <task id="LOCAL-00001" summary="Added Blue teams stuff">
       <created>1572690142177</created>
@@ -87,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572706748755</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added Blue teams stuff&#10;Updated make file">
+      <created>1572706866772</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1572706866772</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

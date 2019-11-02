@@ -141,7 +141,7 @@ services:
                         MHN:
                                 ipv4_address: "10.9.10.2"
                         HIR:
-                                ipv4_address: "10.9.10.50"
+                                ipv4_address: "10.8.10.50"
 
 
 
