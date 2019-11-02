@@ -132,7 +132,6 @@ services:
                 build:
                         context: mhn
                         dockerfile: Dockerfile
-                name: "mhn"
                 environment:
                         SUPERUSER_EMAIL: root@localhost
                         SUPERUSER_PASSWORD: password
@@ -156,4 +155,4 @@ networks:
            driver: bridge
            ipam:
                    config:
-                           -subnet: "10.9.10.0/24"
+                           - subnet: "10.9.10.0/24"
