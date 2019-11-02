@@ -128,7 +128,7 @@ services:
                         HIR:
                             ipv4_address: "10.8.10.9"
 
-        nhm:
+        mhn:
                 build:
                         context: mhn
                         dockerfile: Dockerfile
@@ -138,7 +138,7 @@ services:
                         SERVER_BASE_URL: "http://mhn"
                         HONEYMAP_URL: "http://mhn:3000"
                 networks:
-                        NHM:
+                        MHN:
                                 ipv4_address: "10.9.10.2"
                         HIR:
                                 ipv4_address: "10.9.10.50"
@@ -151,7 +151,7 @@ networks:
             ipam:
                  config:
                      - subnet: "10.8.10.0/24"
-        NHM:
+        MHN:
            driver: bridge
            ipam:
                    config:
