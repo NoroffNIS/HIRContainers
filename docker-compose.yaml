@@ -133,7 +133,7 @@ services:
                         context: mhn
                         dockerfile: Dockerfile
                 environment:
-                        SUPERUSER_EMAIL: "alexander.bjornsrud@noroff.no"
+                        SUPERUSER_EMAIL: "user@localhost"
                         SUPERUSER_PASSWORD: "Password123"
                         SERVER_BASE_URL: "http://mhn"
                         HONEYMAP_URL: "http://mhn:3000"
@@ -144,10 +144,9 @@ services:
                                 ipv4_address: "10.8.10.50"
 
         hp01:
-                build:
-                        image: ubuntu:latest
+                image: ubuntu:latest
                 depends_on:
-                        - mhn
+                        - "mhn"
                 links:
                         - "mhn:mhn"
                 stdin_open: true
@@ -155,11 +154,11 @@ services:
                 networks:
                         MHN:
                                 ipv4_address: "10.9.10.10"
-         hp02:
-                build:
-                        image: ubuntu:latest
+        
+        hp02:
+                image: ubuntu:latest
                 depends_on:
-                        - mhn
+                        - "mhn"
                 links:
                         - "mhn:mhn"
                 stdin_open: true
