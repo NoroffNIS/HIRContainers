@@ -7,9 +7,13 @@ Use the makefile and follow the instuctions if any are given.
 
 usage:
 ```bash
+#linux host VM(recommended)
 make linux
 make networks
 docker-comose up
+
+#kali host
+make kali
 ```
 
 NOTE: You might have to add your user to sudoers and the docker group.
@@ -21,6 +25,7 @@ Remember to add routes in your kali box or set static routes in your router or f
 
 routes:
 ```bash
+#linux host VM(recommended)
 ip route 10.8.10.0/24 via <ip of VM> 
 ip route 10.9.10.0/24 via <ip of VM> 
 ```
