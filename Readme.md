@@ -9,7 +9,10 @@ Use the makefile and follow the instuctions if any are given.
 usage:
 make linux
 make networks
+docker-comose up
 ```
+
+NOTE: You might have to add your user to sudoers and the docker group.
 
 Its recomended to use a linux VM.
 The containers can be used with OSX and Windows see the make file for instructions.
