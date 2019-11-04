@@ -13,7 +13,11 @@ zone "webserver.ex" {
 
 zone "8.10.in-addr.arpa" {
     type master;
-    file "/etc/bind/db.10.8";  # 10.128.0.0/16 subnet
+    file "/etc/bind/db.10.8";  # 10.8.10.0/24 subnet
 };
 
+zone "9.10.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.10.9" # 10.9.10.0/24 subnet
+};
 

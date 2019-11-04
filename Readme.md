@@ -30,6 +30,8 @@ ip route 10.8.10.0/24 via <ip of VM>
 ip route 10.9.10.0/24 via <ip of VM> 
 ```
 
+The dns server for the networks is located at 10.8.10.5.
+
 Updates happen continously, as services are beeing added or improved, remember to pull or fetch!
 
 Happy hunting!
