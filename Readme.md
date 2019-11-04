@@ -8,7 +8,7 @@ Use the makefile and follow the instuctions if any are given.
 ```bash
 usage:
 make linux
-make networke
+make networks
 ```
 
 Its recomended to use a linux VM.
