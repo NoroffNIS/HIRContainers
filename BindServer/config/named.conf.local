@@ -63,6 +63,6 @@ zone "8.10.in-addr.arpa" {
 
 zone "9.10.in-addr.arpa" {
 	type master;
-	file "/etc/bind/Reverse/db.10.9" # 10.9.10.0/24 subnet
+	file "/etc/bind/Reverse/db.10.9"; # 10.9.10.0/24 subnet
 };
 

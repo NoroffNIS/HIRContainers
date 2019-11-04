@@ -10,20 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="521cba2c-438b-4627-a6cf-3536ba1a1f12" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BindServer/config/Blueteam/db.mhn.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BindServer/config/Redteam/db.badstore.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BindServer/config/Redteam/db.bwap.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BindServer/config/Redteam/db.dwa.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BindServer/config/Redteam/db.juiceshop.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BindServer/config/Redteam/db.mutillidae.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BindServer/config/Redteam/db.nessus.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BindServer/config/Redteam/db.webserver.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BindServer/config/db.10.8" beforeDir="false" afterPath="$PROJECT_DIR$/BindServer/config/Reverse/db.10.8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BindServer/config/db.10.9" beforeDir="false" afterPath="$PROJECT_DIR$/BindServer/config/Reverse/db.10.9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BindServer/config/db.webserver.ex" beforeDir="false" afterPath="$PROJECT_DIR$/BindServer/config/Redteam/db.webgoat.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BindServer/config/named.conf.local" beforeDir="false" afterPath="$PROJECT_DIR$/BindServer/config/named.conf.local" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,7 +67,7 @@
       <workItem from="1572689473769" duration="5000000" />
       <workItem from="1572774985566" duration="1459000" />
       <workItem from="1572781758809" duration="2015000" />
-      <workItem from="1572900154418" duration="1235000" />
+      <workItem from="1572900154418" duration="1505000" />
     </task>
     <task id="LOCAL-00001" summary="Added Blue teams stuff">
       <created>1572690142177</created>
