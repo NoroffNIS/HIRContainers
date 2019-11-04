@@ -1,5 +1,5 @@
 clone:
-	git submodule --init --recursive
+	git submodule update --init --recursive
 
 linux: clone
 	sudo curl https://get.docker.com/ | sh
