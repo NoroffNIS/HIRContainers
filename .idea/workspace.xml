@@ -9,9 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="521cba2c-438b-4627-a6cf-3536ba1a1f12" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/BindServer/config/named.conf.options" beforeDir="false" afterPath="$PROJECT_DIR$/BindServer/config/named.conf.options" afterDir="false" />
-    </list>
+    <list default="true" id="521cba2c-438b-4627-a6cf-3536ba1a1f12" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +64,7 @@
       <workItem from="1572689473769" duration="5000000" />
       <workItem from="1572774985566" duration="1459000" />
       <workItem from="1572781758809" duration="2015000" />
-      <workItem from="1572900154418" duration="2846000" />
+      <workItem from="1572900154418" duration="3125000" />
     </task>
     <task id="LOCAL-00001" summary="Added Blue teams stuff">
       <created>1572690142177</created>
