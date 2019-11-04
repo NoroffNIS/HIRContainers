@@ -16,3 +16,9 @@ NOTE: You might have to add your user to sudoers and the docker group.
 
 Its recomended to use a linux VM.
 The containers can be used with OSX and Windows see the make file for instructions.
+
+Remember to add routes in your kali box or set static routes in your router or firewall.
+```bash
+ip route 10.8.10.0/24 via <ip of VM> 
+ip route 10.9.10.0/24 via <ip of VM> 
+```
