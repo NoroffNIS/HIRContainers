@@ -167,6 +167,18 @@ services:
                         MHN:
                                 ipv4_address: "10.9.10.11"
 
+        hp03:
+                image: ubuntu:latest
+                depends_on:
+                        - "mhn"
+                links:
+                        - "mhn:mhn"
+                stdin_open: true
+                tty: true
+                networks:
+                        HIR:
+                                ipv4_address: "10.9.10.51"
+
 
 networks:
         HIR:

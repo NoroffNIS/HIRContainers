@@ -8,16 +8,61 @@
 
 zone "webserver.ex" {
     type master;
-    file "/etc/bind/db.webserver.ex"; # zone file path
+    file "/etc/bind/Redteam/db.webserver.ex"; # zone file path
+};
+
+zone "webgoat.ex" {
+    type master;
+    file "/etc/bind/Redteam/db.webgoat.ex"; # zone file path
+};
+
+zone "badstore.ex" {
+    type master;
+    file "/etc/bind/Redteam/db.badstore.ex"; # zone file path
+};
+
+zone "dwa.ex" {
+    type master;
+    file "/etc/bind/Redteam/db.dwa.ex"; # zone file path
+};
+
+zone "mutillidae.ex" {
+    type master;
+    file "/etc/bind/Redteam/db.mutillidae.ex"; # zone file path
+};
+
+zone "bwap.ex" {
+    type master;
+    file "/etc/bind/Redteam/db.bwap.ex"; # zone file path
+};
+
+zone "juiceshop.ex" {
+    type master;
+    file "/etc/bind/Redteam/db.juiceshop.ex"; # zone file path
+};
+
+zone "nessus.ex" {
+    type master;
+    file "/etc/bind/Redteam/db.nessus.ex"; # zone file path
+};
+
+zone "wordpress.ex" {
+    type master;
+    file "/etc/bind/Redteam/db.wordpress.ex"; # zone file path
+};
+
+zone "mhn.ex" {
+    type master;
+    file "/etc/bind/Blueteam/db.mhn.ex"; # zone file path
 };
 
 zone "8.10.in-addr.arpa" {
     type master;
-    file "/etc/bind/db.10.8";  # 10.8.10.0/24 subnet
+    file "/etc/bind/Reverse/db.10.8";  # 10.8.10.0/24 subnet
 };
 
 zone "9.10.in-addr.arpa" {
 	type master;
-	file "/etc/bind/db.10.9" # 10.9.10.0/24 subnet
+	file "/etc/bind/Reverse/db.10.9" # 10.9.10.0/24 subnet
 };
 
