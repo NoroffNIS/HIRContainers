@@ -177,7 +177,7 @@ services:
                 tty: true
                 networks:
                         HIR:
-                                ipv4_address: "10.9.10.51"
+                                ipv4_address: "10.8.10.51"
 
 
 networks:
