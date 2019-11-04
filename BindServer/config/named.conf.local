@@ -66,3 +66,5 @@ zone "9.10.in-addr.arpa" {
 	file "/etc/bind/Reverse/db.10.9"; # 10.9.10.0/24 subnet
 };
 
+
+
