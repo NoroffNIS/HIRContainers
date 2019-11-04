@@ -1,5 +1,5 @@
 clone:
-    git pull --recurse
+	git pull --recurse
 
 linux: clone
 	sudo curl https://get.docker.com/ | sh
@@ -28,3 +28,6 @@ kali: clone
 start:
 	docker-compose up
 
+networks:
+	sudo sysctl net.ipv4.conf.all.forwarding=1
+	sudo iptables -P FORWARD ACCEPT
