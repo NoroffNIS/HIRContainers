@@ -144,7 +144,9 @@ services:
                                 ipv4_address: "10.8.10.50"
 
         hp01:
-                image: ubuntu:latest
+                build:
+                        context: Honeypot
+                        dockerfile: Dockerfile
                 depends_on:
                         - "mhn"
                 links:
@@ -156,7 +158,9 @@ services:
                                 ipv4_address: "10.9.10.10"
         
         hp02:
-                image: ubuntu:latest
+                build:
+                        context: Honeypot
+                        dockerfile: Dockerfile
                 depends_on:
                         - "mhn"
                 links:
@@ -168,7 +172,9 @@ services:
                                 ipv4_address: "10.9.10.11"
 
         hp03:
-                image: ubuntu:latest
+                build:
+                        context: Honeypot
+                        dockerfile: Dockerfile
                 depends_on:
                         - "mhn"
                 links:
