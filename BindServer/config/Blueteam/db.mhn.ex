@@ -10,7 +10,6 @@ $TTL	604800
 			 604800 )	; Negative Cache TTL
 
             		    IN    A		    10.9.10.2
-            		    IN    A         10.8.10.50
 @                       IN   NS         localhost.
 hp01                    IN    A         10.9.10.10
 hp02                    IN    A         10.9.10.11
