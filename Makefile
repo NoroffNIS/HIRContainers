@@ -25,7 +25,7 @@ kali: clone
 	sudo chmod +x /usr/local/bin/docker-compose
 	sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
-start:
+start: networks
 	docker-compose up
 
 networks:
