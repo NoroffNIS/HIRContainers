@@ -10,7 +10,7 @@ usage:
 #Linux VM(recommended)
 make linux
 make networks
-docker-comose up
+docker-compose up
 
 #Kali VM
 make kali
