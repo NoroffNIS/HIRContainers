@@ -14,7 +14,6 @@ options {
 
 	forwarders {
 	 	8.8.8.8;
-	 	192.168.1.1;
 	};
 
 	 forward only;

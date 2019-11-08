@@ -11,10 +11,15 @@
   <component name="ChangeListManager">
     <list default="true" id="521cba2c-438b-4627-a6cf-3536ba1a1f12" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Apache/config/sites-available/001-default.conf" beforeDir="false" afterPath="$PROJECT_DIR$/Apache/config/sites-available/001-default.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Apache/pages/secret/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Apache/pages/secret/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Honeypot/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Honeypot/Dockerfile" afterDir="false" />
     </list>
+=======
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+>>>>>>> origin/master
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,10 +81,15 @@
       <workItem from="1572689473769" duration="5000000" />
       <workItem from="1572774985566" duration="1459000" />
       <workItem from="1572781758809" duration="2015000" />
+<<<<<<< HEAD
       <workItem from="1572900154418" duration="4075000" />
       <workItem from="1572956516154" duration="682000" />
       <workItem from="1572958899196" duration="1067000" />
       <workItem from="1573210325121" duration="659000" />
+=======
+      <workItem from="1572900154418" duration="4864000" />
+      <workItem from="1572968144328" duration="3603000" />
+>>>>>>> origin/master
     </task>
     <task id="LOCAL-00001" summary="Added Blue teams stuff">
       <created>1572690142177</created>
@@ -123,7 +133,21 @@
       <option name="project" value="LOCAL" />
       <updated>1572706866772</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added Blue teams stuff&#10;Updated make file">
+      <created>1572968686016</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1572968686016</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added Blue teams stuff&#10;Updated make file">
+      <created>1572974542511</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1572974542511</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

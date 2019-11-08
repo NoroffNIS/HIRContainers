@@ -26,6 +26,7 @@ kali: clone
 	sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 start: networks
+	sudo service docker start
 	docker-compose up
 
 networks:
