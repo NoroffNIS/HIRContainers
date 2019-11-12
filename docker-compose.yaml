@@ -143,50 +143,50 @@ services:
                         HIR:
                                 ipv4_address: "10.8.10.50"
                 dns: "10.8.10.5"
-        hp01:
-                build:
-                        context: Honeypot
-                        dockerfile: Dockerfile
-                depends_on:
-                        - "mhn"
-                links:
-                        - "mhn:mhn"
-                stdin_open: true
-                tty: true
-                networks:
-                        MHN:
-                                ipv4_address: "10.9.10.10"
-                dns: "10.8.10.5"
+       # hp01:
+        #        build:
+        #                context: Honeypot
+        #                dockerfile: Dockerfile
+        #        depends_on:
+        #                - "mhn"
+        #        links:
+        #                - "mhn:mhn"
+        #        stdin_open: true
+        #        tty: true
+        #        networks:
+        #                MHN:
+        #                        ipv4_address: "10.9.10.10"
+        #        dns: "10.8.10.5"
         
-        hp02:
-                build:
-                        context: Honeypot
-                        dockerfile: Dockerfile
-                depends_on:
-                        - "mhn"
-                links:
-                        - "mhn:mhn"
-                stdin_open: true
-                tty: true
-                networks:
-                        MHN:
-                                ipv4_address: "10.9.10.11"
-                dns: "10.8.10.5"
+        #hp02:
+        #        build:
+        #                context: Honeypot
+        #                dockerfile: Dockerfile
+        #        depends_on:
+        #                - "mhn"
+        #        links:
+        #                - "mhn:mhn"
+        #        stdin_open: true
+        #        tty: true
+        #        networks:
+        #                MHN:
+        #                        ipv4_address: "10.9.10.11"
+        #        dns: "10.8.10.5"
 
-        hp03:
-                build:
-                        context: Honeypot
-                        dockerfile: Dockerfile
-                depends_on:
-                        - "mhn"
-                links:
-                        - "mhn:mhn"
-                stdin_open: true
-                tty: true
-                networks:
-                        HIR:
-                                ipv4_address: "10.8.10.51"
-                dns: "10.8.10.5"
+        #hp03:
+        #        build:
+        #                context: Honeypot
+        #                dockerfile: Dockerfile
+        #        depends_on:
+        #                - "mhn"
+        #        links:
+        #                - "mhn:mhn"
+         #       stdin_open: true
+        #        tty: true
+        #        networks:
+        #                HIR:
+        #                        ipv4_address: "10.8.10.51"
+        #        dns: "10.8.10.5"
 
 networks:
         HIR:
