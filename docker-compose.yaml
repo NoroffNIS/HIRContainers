@@ -156,7 +156,7 @@ services:
                  networks:
                          MHN:
                                  ipv4_address: "10.9.10.10"
-                 dns: "10.8.10.5"
+                 dns: "8.8.8.8"
         
         hp02:
                  build:
@@ -171,7 +171,7 @@ services:
                  networks:
                          MHN:
                                  ipv4_address: "10.9.10.11"
-                 dns: "10.8.10.5"
+                 dns: "8.8.8.8"
 
         hp03:
                  build:
@@ -186,7 +186,7 @@ services:
                  networks:
                          HIR:
                                  ipv4_address: "10.8.10.51"
-                 dns: "10.8.10.5"
+                 dns: "8.8.8.8"
 
 networks:
         HIR:
