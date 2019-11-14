@@ -26,8 +26,8 @@ Remember to add routes in your kali box or set static routes in your router or f
 routes:
 ```bash
 #Kali VM on the network of the Linux VM(recommended)
-ip route 10.8.10.0/24 via <ip of VM> 
-ip route 10.9.10.0/24 via <ip of VM> 
+ip route add 10.8.10.0/24 via <ip of VM> 
+ip route add 10.9.10.0/24 via <ip of VM> 
 ```
 
 The dns server for the networks is located at 10.8.10.5.
