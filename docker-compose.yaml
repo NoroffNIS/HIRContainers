@@ -1,6 +1,11 @@
 version: "3.7"
 
 services:
+
+##--------------------------------
+#       Vulnerable Services
+##--------------------------------
+
         bindserver:
                 build:
                         context: BindServer
@@ -128,6 +133,11 @@ services:
                         HIR:
                             ipv4_address: "10.8.10.9"
 
+##----------------------------------
+#       HoneyPots
+##---------------------------------
+
+
         mhn:
                 build:
                         context: mhn
@@ -188,6 +198,14 @@ services:
                                  ipv4_address: "10.8.10.51"
                  dns: "10.8.10.5"
 
+##---------------------------------
+#       ELK
+##---------------------------------
+        rsyslog:
+        elastic:
+        logstash:
+        kibana:
+
 networks:
         HIR:
             driver: bridge
@@ -199,3 +217,8 @@ networks:
            ipam:
                    config:
                            - subnet: "10.9.10.0/24"
+        ELK:
+           driver:
+           ipam:
+                  config:
+                          - subnet: "10.10.10.0/24"
