@@ -56,6 +56,12 @@ zone "mhn.ex" {
     file "/etc/bind/Blueteam/db.mhn.ex"; # zone file path
 };
 
+zone "elk.ex" {
+    type master;
+    file "/etc/bind/Blueteam/db.elk.ex"; # zone file path
+};
+
+
 zone "8.10.in-addr.arpa" {
     type master;
     file "/etc/bind/Reverse/db.10.8";  # 10.8.10.0/24 subnet
@@ -65,6 +71,12 @@ zone "9.10.in-addr.arpa" {
 	type master;
 	file "/etc/bind/Reverse/db.10.9"; # 10.9.10.0/24 subnet
 };
+
+zone "10.10.in-addr.arpa" {
+	type master;
+	file "/etc/bind/Reverse/db.10.10"; # 10.9.10.0/24 subnet
+};
+
 
 
 

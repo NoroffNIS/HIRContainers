@@ -1,0 +1,17 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	elk.ex. root.webserver.ex. (
+			      3		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@       IN      NS      localhost.
+10.5 	IN 	PTR 	kibana	
+10.6	IN	PTR	logstash
+10.7	IN	PTR	elastic
+10.8	IN	PTR	rsyslog
+
