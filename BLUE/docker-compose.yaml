@@ -1,0 +1,59 @@
+version: "3.7"
+
+services:
+
+##----------------------------------
+#       HoneyPots
+##---------------------------------
+
+        mhn:
+                build:
+                        context: mhn
+                        dockerfile: Dockerfile
+                environment:
+                        SUPERUSER_EMAIL: "user@localhost"
+                        SUPERUSER_PASSWORD: "Password123"
+                        SERVER_BASE_URL: "http://mhn"
+                        HONEYMAP_URL: "http://mhn:3000"
+                networks:
+                        MHN:
+                                ipv4_address: "10.9.10.2"
+                dns: "10.8.10.5"
+        
+        hp01:
+                 build:
+                         context: Honeypot
+                         dockerfile: Dockerfile
+                 depends_on:
+                         - "mhn"
+                 links:
+                         - "mhn:mhn"
+                 stdin_open: true
+                 tty: true
+                 networks:
+                         MHN:
+                                 ipv4_address: "10.9.10.10"
+                 dns: "10.8.10.5"
+        
+        
+        hp02:
+                 build:
+                         context: Honeypot
+                         dockerfile: Dockerfile
+                 depends_on:
+                         - "mhn"
+                 links:
+                         - "mhn:mhn"
+                 stdin_open: true
+                 tty: true
+                 networks:
+                         MHN:
+                                 ipv4_address: "10.9.10.11"
+                 dns: "10.8.10.5"
+
+networks:
+        MHN:
+           driver: bridge
+           ipam:
+                   config:
+                           - subnet: "10.9.10.0/24"

@@ -1,0 +1,47 @@
+version: "3.7"
+
+services:
+
+##---------------------------------
+#       ELK
+##---------------------------------
+        elasticsearch:
+            image: docker.elastic.co/elasticsearch/elasticsearch:7.1.1
+            environment: 
+              - discovery.type=single-node
+              - xpack.security.enabled=false
+            networks: 
+                ELK:
+                        ipv4_address: "10.11.10.7"
+            dns: "10.8.10.5"
+
+        logstash:
+            image: docker.elastic.co/logstash/logstash:7.1.1
+            depends_on: 
+              - elasticsearch
+            ports:
+              - 12201:12201/udp
+            volumes:
+              - ./ELK/logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro 
+            networks:
+                ELK:
+                        ipv4_address: "10.11.10.6"
+            dns: "10.8.10.5"
+
+        kibana:
+            image: docker.elastic.co/kibana/kibana:7.1.1
+            depends_on:
+              - logstash
+            ports: 
+              - 5601:5601
+            networks: 
+                ELK:
+                        ipv4_address: "10.11.10.5"
+            dns: "10.8.10.5"
+
+networks:
+        ELK:
+           driver: bridge
+           ipam:
+                  config:
+                          - subnet: "10.11.10.0/24"

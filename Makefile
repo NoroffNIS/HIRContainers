@@ -25,9 +25,30 @@ kali: clone
 	sudo chmod +x /usr/local/bin/docker-compose
 	sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
-start: networks
+
+blue: networks
+	docker-compose -f BLUE/docker-compose.yaml up -d
+
+red: networks
+	docker-compose -f RED/docker-compose.yaml up -d
+
+siem: networks
+	docker-compose -f SIEM/docker-compose.yaml up -d
+
+start: blue red siem
 	sudo service docker start
 	docker-compose up
+
+bs:
+	docker-compose -f BLUE/docker-compose.yaml stop
+
+rs:
+	docker-compose -f RED/docker-compose.yaml stop
+
+ss:
+	docker-compose -f SIEM/docker-compose.yaml stop
+
+stop: bs rs ss
 
 networks:
 	sudo sysctl net.ipv4.conf.all.forwarding=1
