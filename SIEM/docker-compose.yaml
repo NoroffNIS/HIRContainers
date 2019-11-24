@@ -18,8 +18,6 @@ services:
 
         logstash:
             image: docker.elastic.co/logstash/logstash:7.1.1
-            depends_on: 
-              - elasticsearch
             ports:
               - 12201:12201/udp
             volumes:
@@ -39,6 +37,7 @@ services:
                         ipv4_address: "10.11.10.5"
 
         filebeat:
+                user: root
                 image: docker.elastic.co/beats/filebeat:7.4.2
                 depends_on:
                         - logstash
@@ -47,12 +46,12 @@ services:
                         - "logstash:logstash"
                         - "elasticsearch:elasticsearch"
                 volumes:
-                        - "FILE/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro"
+                        - "./FILE/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro"
                         - "/var/lib/docker/containers:/var/lib/docker/containers:ro"
                         - "/var/run/docker.sock:/var/run/docker.sock:ro"
                 environment:
-                        output.elasticsearch.hosts: "elasticsearch:9200" 
-                        strict.perms: false
+                        - output.elasticsearch.hosts="elasticsearch:9200" 
+                        - strict.perms=false
 
                 networks:
                         ELK:
