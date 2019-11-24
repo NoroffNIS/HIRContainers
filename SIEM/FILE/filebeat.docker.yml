@@ -1,0 +1,13 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  fields:
+    application: "Docker"
+    fields_under_root: true
+  paths:
+    - /var/lib/docker/containers/*/*.log
+
+
+#----------------------------- Logstash output --------------------------------
+output.logstash:
+  hosts: ["logstash:5044"]
