@@ -7,6 +7,8 @@ services:
 ##--------------------------------
 
         bindserver:
+                hostname: "Bind"
+                container_name: "Bind"
                 build:
                         context: BindServer
                         dockerfile: Dockerfile
@@ -25,6 +27,8 @@ services:
                 stdin_open: true
                 tty: true
         web:
+                hostname: "Apache"
+                container_name: "Apache"
                 build:
                         context: Apache
                         dockerfile: Dockerfile
@@ -48,6 +52,8 @@ services:
 
  
         curler:
+                hostname: "Curler"
+                container_name: "Curler"
                 image: debian:latest
                 links:
                         - "web:web"
@@ -58,6 +64,8 @@ services:
                 dns: "10.8.10.5"
 
         webgoat:
+                hostname: "WebGoat"
+                container_name: "WebGoat"
                 image: szsecurity/webgoat
                 expose: ["80"] 
                 networks:
@@ -65,30 +73,40 @@ services:
                             ipv4_address: "10.8.10.21"
  
         badstore:
+                hostname: "BaadStore"
+                container_name: "BadStore"
                 image: jvhoof/badstore-docker
                 networks:
                         HIR:
                             ipv4_address: "10.8.10.22"
  
-        dwa:
+        dvwa:
+                hostname: "DamnVulnaberaleWebApp"
+                container_name: "DamnVulnaberaleWebApp"
                 image: vulnerables/web-dvwa
                 networks:
                         HIR:
                             ipv4_address: "10.8.10.23"
  
         mutillidae:
+                hostname: "Mutillidate"
+                container_name: "Mutillidate"
                 image: szsecurity/mutillidae
                 networks:
                         HIR:
                             ipv4_address: "10.8.10.24"
  
         bwap:
+                hostname: "bWapp"
+                container_name: "bWapp"
                 image: raesene/bwapp
                 networks:
                         HIR:
                             ipv4_address: "10.8.10.25"
  
         jucieshop:
+                hostname: "JuiceShop"
+                container_name: "JuiceShop"
                 image: bkimminich/juice-shop
                 networks:
                         - HIR
@@ -97,6 +115,8 @@ services:
                            ipv4_address: "10.8.10.26"
  
         nessus:
+                hostname: "Nessus"
+                container_name: "Nessus"
                 image: sometheycallme/docker-nessus
                 expose: [8834]
                 networks:
@@ -105,6 +125,8 @@ services:
                 dns: "10.8.10.5"
         
         wordpress:
+                hostname: "Wordpress"
+                container_name: "Wordpress"
                 image: wordpress
                 restart: always
                 expose: [80, 443]
@@ -122,6 +144,8 @@ services:
                         - "db:db"
 
         db:
+                hostname: "Mysql"
+                container_name: "Mysql"
                 image: mysql:5.7
                 restart: always
                 environment:
@@ -139,4 +163,4 @@ networks:
             driver: bridge
             ipam:
                  config:
-                     - subnet: "10.8.10.0/24"
+                         - subnet: "10.8.10.0/24"

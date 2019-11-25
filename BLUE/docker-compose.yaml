@@ -10,6 +10,8 @@ services:
                 build:
                         context: mhn
                         dockerfile: Dockerfile
+                hostname: "mhn"
+                container_name: "mhn"
                 environment:
                         SUPERUSER_EMAIL: "user@localhost"
                         SUPERUSER_PASSWORD: "Password123"
@@ -24,6 +26,8 @@ services:
                  build:
                          context: Honeypot
                          dockerfile: Dockerfile
+                 hostname: "Honeypot01"
+                 container_name: "Honeypot01"
                  depends_on:
                          - "mhn"
                  links:
@@ -40,6 +44,8 @@ services:
                  build:
                          context: Honeypot
                          dockerfile: Dockerfile
+                 hostname: "Honeypot02"
+                 container_name: "Honeypot02"
                  depends_on:
                          - "mhn"
                  links:
