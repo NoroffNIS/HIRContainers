@@ -12,8 +12,6 @@ services:
             environment: 
               - discovery.type=single-node
               - xpack.security.enabled=false
-            depends_on:
-                - logstash
             networks: 
                 ELK:
                         ipv4_address: "10.11.10.7"
@@ -26,6 +24,8 @@ services:
               - 12201:12201/udp
             links:
                     - "elasticsearch:elasticsearch"
+            depends_on: 
+                - elasticsearch
             volumes:
               - ./ELK/logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro 
             networks:
