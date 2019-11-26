@@ -40,7 +40,7 @@ processors:
     host: "unix:///var/run/docker.sock"
 
 output.logstash:
-  hosts: ["logstash:5044"]
+  hosts: ["Logstash:5044"]
 
 logging.level: info
 logging.to_files: false
