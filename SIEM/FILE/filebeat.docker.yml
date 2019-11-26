@@ -34,21 +34,21 @@ filebeat.inputs:
 processors:
 - decode_json_fields:
     fields: ["log", "message"]
-#   target: ""
+    #    target: ""
     overwrite_keys: true
-#- add_docker_metadata:
-#    host: "unix:///var/run/docker.sock"
+- add_docker_metadata:
+    host: "unix:///var/run/docker.sock"
 
 output.logstash:
   hosts: ["logstash:5044"]
 
-#logging.level: info
-#logging.to_files: false
-#logging.to_syslog: false
-#loggins.metrice.enabled: false
-#logging.files:
-# path: /var/log/filebeat
-#  name: filebeat
-#  keepfiles: 7
-#  permissions: 0644
-#ssl.verification_mode: none
+  logging.level: info
+  logging.to_files: false
+  logging.to_syslog: false
+  loggins.metrice.enabled: false
+  logging.files:
+    path: /var/log/filebeat
+    name: filebeat
+    keepfiles: 7
+    permissions: 0644
+  ssl.verification_mode: none
