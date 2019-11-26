@@ -24,6 +24,8 @@ services:
             image: docker.elastic.co/logstash/logstash:7.1.1
             ports:
               - 12201:12201/udp
+            links:
+                    - "elasticsearch:elasticsearch"
             volumes:
               - ./ELK/logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro 
             networks:
