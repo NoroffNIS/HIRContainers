@@ -44,11 +44,11 @@ output.logstash:
 
   logging.level: info
   logging.to_files: false
-  logging.to_syslog: false
-  loggins.metrice.enabled: false
-  logging.files:
-    path: /var/log/filebeat
-    name: filebeat
-    keepfiles: 7
-    permissions: 0644
-  ssl.verification_mode: none
+  #  logging.to_syslog: false
+  #loggins.metrice.enabled: false
+  #logging.files:
+  #  path: /var/log/filebeat
+  #  name: filebeat
+  #  keepfiles: 7
+  #  permissions: 0644
+  #ssl.verification_mode: none
