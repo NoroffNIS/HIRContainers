@@ -36,8 +36,7 @@ siem: networks
 	docker-compose -f SIEM/docker-compose.yaml up -d
 
 start: blue red siem
-	sudo service docker start
-	docker-compose up
+	
 
 bs:
 	docker-compose -f BLUE/docker-compose.yaml stop
