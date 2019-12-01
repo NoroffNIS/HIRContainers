@@ -46,9 +46,9 @@ processors:
 
 output.logstash:
   hosts: ["logstash:5044"]
-
-  logging.level: info
-  logging.to_files: false
+  
+logging.level: info
+logging.to_files: false
   #  logging.to_syslog: false
   #loggins.metrice.enabled: false
   #logging.files:
