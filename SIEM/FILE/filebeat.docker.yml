@@ -34,6 +34,15 @@ filebeat.inputs:
 #    ids:
 #      - "*"
 
+#- type: docker
+#  combine_partial: true
+#  containers:
+#    path: "/var/lib/docker/containers"
+#    stream: "stdout"
+#    ids:
+#      - "*"
+
+
 # ignore_older: 10m
 
 processors:
