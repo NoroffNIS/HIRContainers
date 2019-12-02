@@ -6,10 +6,10 @@ filebeat.inputs:
   paths:
     - /var/lib/docker/containers/*/*.log
   
-  json.message_key: message
-  json.overwrite_keys: true
-  json.keys_under_root: true
-  json.add_error_key: true
+      #  json.message_key: message
+  #json.overwrite_keys: true
+  #json.keys_under_root: true
+  #json.add_error_key: true
 
 ##
 #filebeat.prospectors:
