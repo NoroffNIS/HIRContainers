@@ -52,3 +52,5 @@ stop: bs rs ss
 networks:
 	sudo sysctl net.ipv4.conf.all.forwarding=1
 	sudo iptables -P FORWARD ACCEPT
+dns:
+	docker-compose -f RED/docker-compose.yaml start bindserver
