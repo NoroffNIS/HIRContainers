@@ -20,7 +20,6 @@ services:
                 networks:
                         MHN:
                                 ipv4_address: "10.9.10.2"
-                dns: "10.8.10.5"
         
         hp01:
                  build:
